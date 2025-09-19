@@ -1,0 +1,30 @@
+:root{
+  --bg: #f6fff7;
+  --card: #ffffff;
+  --accent: #2b7a2b;
+  --muted: #6b6b6b;
+  --glass: rgba(255,255,255,0.6);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+body{background:linear-gradient(180deg,#e9fff0,var(--bg));color:#123;font-smoothing:antialiased}
+.container{max-width:900px;margin:32px auto;padding:24px;background:var(--card);border-radius:12px;box-shadow:0 8px 30px rgba(15,15,15,0.06)}
+h1{margin:0;font-size:28px}
+.tagline{color:var(--muted);margin-top:6px}
+.controls{display:flex;gap:8px;margin:18px 0;flex-wrap:wrap}
+.controls input, .controls select{padding:10px;border-radius:8px;border:1px solid #ddd;min-width:160px}
+.controls button{padding:10px 14px;border-radius:8px;border:none;background:var(--accent);color:white;cursor:pointer}
+.controls .secondary{background:#eee;color:#333}
+.garden{min-height:220px;border-radius:10px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,0.5),var(--glass));display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;justify-content:flex-start}
+.empty{color:var(--muted)}
+.plant{width:120px;background:rgba(255,255,255,0.8);border-radius:10px;padding:8px;display:flex;flex-direction:column;align-items:center;box-shadow:0 6px 18px rgba(10,10,10,0.06)}
+.plant-svg{width:100%;height:140px}
+.moodText{font-size:13px;color:#234;margin-top:6px;text-align:center;min-height:34px;padding:4px 6px}
+.leaf path, .stem rect, .flower circle{transition:all 600ms ease;transform-origin:50% 50%}
+.plant.grow .stem rect{height:80px}
+.plant.grow .leaf.left path{transform:translateX(-6px) rotate(-6deg) scale(1.03)}
+.plant.grow .leaf.right path{transform:translateX(6px) rotate(6deg) scale(1.03)}
+.log{margin-top:18px}
+.log h2{margin:0 0 8px 0}
+#logList{max-height:140px;overflow:auto;padding-left:18px}
+footer{margin-top:14px;color:var(--muted);font-size:13px}

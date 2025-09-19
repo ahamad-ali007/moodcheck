@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mood Garden — Interactive Single Page App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Mood Garden 🌱</h1>
+    <p class="tagline">Type how you feel and watch your garden respond.</p>
+
+    <section class="controls">
+      <input id="moodInput" placeholder="I'm feeling..." aria-label="Mood input" />
+      <select id="presetMood" aria-label="Preset moods">
+        <option value="">Choose a preset</option>
+        <option value="happy">Happy</option>
+        <option value="sad">Sad</option>
+        <option value="calm">Calm</option>
+        <option value="excited">Excited</option>
+        <option value="angry">Angry</option>
+      </select>
+      <button id="growBtn">Grow Plant</button>
+      <button id="clearBtn" class="secondary">Clear Garden</button>
+    </section>
+
+    <section id="garden" class="garden" aria-live="polite">
+      <!-- Plants will appear here -->
+      <div class="empty">Your garden is empty — add a mood to grow a plant.</div>
+    </section>
+
+    <section class="log">
+      <h2>Mood Log</h2>
+      <ol id="logList"></ol>
+    </section>
+
+    <footer>
+      <small>Built for a single-page web app assignment. Deploy to GitHub + Vercel.</small>
+    </footer>
+  </main>
+
+  <template id="plantTemplate">
+    <div class="plant">
+      <svg viewBox="0 0 100 140" class="plant-svg" role="img" aria-hidden="true">
+        <g class="stem">
+          <rect x="47" y="40" width="6" height="60" rx="3"/>
+        </g>
+        <g class="leaf left">
+          <path d="M50 60 C30 55, 20 80, 50 85 Z" />
+        </g>
+        <g class="leaf right">
+          <path d="M50 60 C70 55, 80 80, 50 85 Z" />
+        </g>
+        <g class="flower">
+          <circle cx="50" cy="40" r="8" />
+        </g>
+      </svg>
+      <div class="moodText"></div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
